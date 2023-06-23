@@ -1,32 +1,3 @@
-// class Search {
-//     constructor() {
-//         this.app = document.getElementById('app');
-        
-//         this.searchLine = this.createElement('div', 'search-line');
-//         this.searchInput = this.createElement('input', 'search-input');
-//         this.searchLine.append(this.searchInput);
-//         this.app.append(this.searchLine);
-//     }
-
-//     createElement (elementTag, elementClass) {
-//         const element = document.createElement(elementTag);
-//         if (elementClass) {
-//             element.classList.add(elementClass);
-//         }
-//         return element 
-//     }
-// }
-
-
-// class GetData {
-//     constructor(Search) {
-//         this.Search = Search;
-
-//         this.Search.searchInput.addEventListener('keyup', function (){
-//             console.log(1)
-//         })
-//     }
-// }
 function debounce(callee, timeoutMs) {
 
     return function perform(...args) {
@@ -53,7 +24,7 @@ async function searchRepo (input) {
     // console.log(input.value);
     let response = await fetch(`https://api.github.com/search/repositories?q=${input}`);
     let data = await response.json()
-    console.log(data.items)
+    // console.log(data.items)
     return data.items
 }
 
@@ -64,7 +35,7 @@ async function RepoList (data) {
         document.querySelector(".removable").remove();
     }
 
-    console.log(RepoAnsw[0].name);
+    // console.log(RepoAnsw[0].name);
     let List = document.createElement("ul")
     List.classList.add("removable");
     for (let i = 0; i < 5; i++) {
@@ -104,7 +75,7 @@ async function RepoList (data) {
         repoContainer.className = "container_repo-container";
         let repoInfo = document.createElement("div");
         repoInfo.className = "container_repo-info";
-        repoInfo.innerText = `Name:${repo.name}\n Owner:${repo.owner.login}\n Stars:${repo.stargazers_count}`;
+        repoInfo.innerText = `Name: ${repo.name}\n Owner: ${repo.owner.login}\n Stars: ${repo.stargazers_count}`;
         repoContainer.append(repoInfo);
         let btn = document.createElement("button");
         btn.addEventListener("click", () => removeRepo(repoContainer));
