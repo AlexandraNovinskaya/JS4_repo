@@ -30,8 +30,9 @@ input {
 li {
     list-style: none;
     border: 1px solid black;
-    width: 505px;
+    width: 500px;
     background-color: #E3E3E3;
+    padding-left: 8px;
 }
 
 .container {
