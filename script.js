@@ -49,28 +49,8 @@ async function RepoList (data) {
     document.getElementById("result").append(List)
 }
 
-// input.addEventListener onclickS
 
-// createElement (elementTag, elementClass) {
-//             const element = document.createElement(elementTag);
-//             if (elementClass) {
-//                 element.classList.add(elementClass);
-//             }
-//             return element 
-// }
-
-// async function autoCmp (input) {
-//     // let inputs = document.querySelectorAll(selector);
-//     let ListFive = await RepoList(input); 
-//     document.getElementById('result').append(ListFive);
-
-    
-// }
-
-
-
-
-    function addRepo(repo) {
+function addRepo(repo) {
         let repoContainer = document.createElement("div");
         repoContainer.className = "container_repo-container";
         let repoInfo = document.createElement("div");
@@ -86,7 +66,7 @@ async function RepoList (data) {
     
     }
     
-    function removeRepo(elem) {
+function removeRepo(elem) {
         elem.remove();
     
     }
